@@ -12,3 +12,4 @@ class User(Base):
     email_contato = Column(String(64), nullable=True)
     website = Column(String(128), nullable=True)
 
+    

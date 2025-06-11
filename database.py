@@ -20,7 +20,7 @@ SessionLocal = sessionmaker(autocommit = False, autoflush = False, bind = engine
 
 Base = declarative_base()
 
-der get_db():  #Representa a chamada do banco de dados
+def get_db():  #Representa a chamada do banco de dados
     db = SessionLocal()
 
     try:
