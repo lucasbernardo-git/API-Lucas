@@ -7,7 +7,7 @@ class Funcionario(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     pessoa_id = Column(Integer, ForeignKey("pessoas.id"), unique=True)
     salario = Column(Float, nullable=False)
-    carga_horaria = Column(String, nullable=True)
+    carga_horaria = Column(String(100), nullable=True)
     cargo_id = Column(Integer, ForeignKey("cargos.id"))
     data_contratacao = Column(Date, nullable=False)
 

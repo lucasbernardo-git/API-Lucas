@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List
 
-router = APIRouter(prefix="/empresas")
+router = APIRouter(prefix="/empresa")
 
 class CompanyResponse(BaseModel):
     id: int
