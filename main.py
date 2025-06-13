@@ -6,6 +6,9 @@ from app.models import cargo, cliente, copias_livro, empresa, emprestimo, endere
 
 app = FastAPI()
 
+# Include the empresa router
+app.include_router(empresa.router)
+
 #Limpa o banco e gera um novo
 
 Base.metadata.drop_all(bind=engine)
