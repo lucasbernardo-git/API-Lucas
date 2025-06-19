@@ -5,6 +5,7 @@ import app.models
 from app.routers.empresa import router as empresa_router
 from app.routers.book import router as book_router
 from app.routers.user import router as user_router
+from app.routers.borrow import router as borrow_router
 app = FastAPI()
 
 #Limpa o banco e gera um novo
@@ -19,6 +20,7 @@ def check_api():
 app.include_router(empresa_router)
 app.include_router(book_router)
 app.include_router(user_router)
+app.include_router(borrow_router)
 
 
 
