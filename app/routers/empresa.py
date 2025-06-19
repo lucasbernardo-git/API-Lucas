@@ -45,9 +45,9 @@ def listar_empresas(db: Session = Depends(get_db)):
     empresas = db.query(EmpresaModel).all()
     return empresas
 
-@router.get("/{id}", response_model=CompanyResponse)
-def obter_empresa(id: int, db: Session = Depends(get_db)):
-    empresa = db.query(EmpresaModel).filter(EmpresaModel.id == id).first()
+@router.get("/{cnpj}", response_model=CompanyResponse)
+def obter_empresa(cnpj: str, db: Session = Depends(get_db)):
+    empresa = db.query(EmpresaModel).filter(EmpresaModel.cnpj == cnpj).first()
     if empresa is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Empresa não encontrada")
     return empresa
